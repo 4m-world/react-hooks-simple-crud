@@ -25,9 +25,9 @@ const RecordForm = ({addAction, form, ...props}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.form.validateFields((err, values) => {
+        form.validateFields((err, values) => {
             if (!err) {
-                props.addRecord(values);
+                addAction(values);
                 setRecord(initialFormState);
                 resetFields();
             }
